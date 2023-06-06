@@ -195,6 +195,10 @@ export class CuponOmnicanalComponent implements OnInit {
     this.disCupones = false;
   }
 
+  replaceDiacritics(text: string) {
+    return text.normalize('NFD').replace(/\p{Diacritic}/gu, '');
+  }
+
   filtroWeb(){
     if(this.searchWeb.length > 0){
       this.productosCartaWeb =  this.productosCartaWebTemp.filter((item) => {
@@ -1744,7 +1748,7 @@ export class CuponOmnicanalComponent implements OnInit {
     
     if (this.selectionTypeCupon == '1' && tipo == 1) {
       this.cuponOmni2 = {
-        nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+        nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
         activoCompraMin: 1,
         codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
         monto: this.cuponOmni.monto,
@@ -1774,7 +1778,7 @@ export class CuponOmnicanalComponent implements OnInit {
     else if (this.selectionTypeCupon == '1' && tipo == 2) {
       
       this.cuponOmni2 = {
-        nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+        nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
         nombreCupon:this.cuponOmni.codigo.toUpperCase(),
         activoCompraMin: 1,
         codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
@@ -1804,7 +1808,7 @@ export class CuponOmnicanalComponent implements OnInit {
     else if (this.selectionTypeCupon == '2' && tipo == 1) {
       console.log(this.productosCartaConsolidado);
       this.cuponOmni2 = {
-        nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),          
+        nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
         activoCompraMin: 1,
         codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
         monto: this.cuponOmni.percentdsct,
@@ -1833,7 +1837,7 @@ export class CuponOmnicanalComponent implements OnInit {
 
     else if (this.selectionTypeCupon == '2' && tipo == 2) { 
       this.cuponOmni2 = {
-        nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+        nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
         nombreCupon:this.cuponOmni.codigo.toUpperCase(),
         activoCompraMin: 1,
         codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
@@ -1862,7 +1866,7 @@ export class CuponOmnicanalComponent implements OnInit {
 
     else if (this.selectionTypeCupon == '3' && tipo == 1) {
       this.cuponOmni2 = {
-        nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+        nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
         activoCompraMin: 1,
         codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
         monto: this.cuponOmni.percentdsct,
@@ -1891,7 +1895,7 @@ export class CuponOmnicanalComponent implements OnInit {
 
     else if (this.selectionTypeCupon == '3' && tipo == 2) {
       this.cuponOmni2 = {
-        nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+        nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
         nombreCupon:this.cuponOmni.codigo.toUpperCase(),
         activoCompraMin: 1,
         codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
@@ -1920,7 +1924,7 @@ export class CuponOmnicanalComponent implements OnInit {
 
     else if (this.selectionTypeCupon == '4' && tipo == 1) {
       this.cuponOmni2 = {
-        nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+        nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
         activoCompraMin: 1,
         codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
         monto: this.cuponOmni.percentdsct,
@@ -1949,7 +1953,7 @@ export class CuponOmnicanalComponent implements OnInit {
 
     else if (this.selectionTypeCupon == '4' && tipo == 2) {
       this.cuponOmni2 = {
-        nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+        nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
         nombreCupon:this.cuponOmni.codigo.toUpperCase(),
         activoCompraMin: 1,
         codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
@@ -1978,7 +1982,7 @@ export class CuponOmnicanalComponent implements OnInit {
 
     else if (this.selectionTypeCupon == '5' && tipo == 1) {
       this.cuponOmni2 = {
-        nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+        nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
         activoCompraMin: 1,
         codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
         monto: this.cuponOmni.percentdsct,
@@ -2007,7 +2011,7 @@ export class CuponOmnicanalComponent implements OnInit {
 
     else if (this.selectionTypeCupon == '5' && tipo == 2) {
       this.cuponOmni2 = {
-        nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+        nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
         nombreCupon:this.cuponOmni.codigo.toUpperCase(),
         activoCompraMin: 1,
         codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
@@ -2036,7 +2040,7 @@ export class CuponOmnicanalComponent implements OnInit {
 
     else if (this.selectionTypeCupon == '6' && tipo == 1) {
       this.cuponOmni2 = {
-        nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+        nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
         activoCompraMin: 1,
         codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
         monto: this.cuponOmni.percentdsct,
@@ -2065,7 +2069,7 @@ export class CuponOmnicanalComponent implements OnInit {
 
     else if (this.selectionTypeCupon == '6' && tipo == 2) {
       this.cuponOmni2 = {
-        nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+        nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
         nombreCupon:this.cuponOmni.codigo.toUpperCase(),
         activoCompraMin: 1,
         codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
@@ -2516,7 +2520,7 @@ export class CuponOmnicanalComponent implements OnInit {
       
       if (this.selectionTypeCupon == '1' && tipo == 1) {
         this.cuponOmni2 = {
-          nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+          nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
           activoCompraMin: 1,
           codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
           monto: this.cuponOmni.monto,
@@ -2546,7 +2550,7 @@ export class CuponOmnicanalComponent implements OnInit {
       else if (this.selectionTypeCupon == '1' && tipo == 2) {
         
         this.cuponOmni2 = {
-          nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+          nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
           nombreCupon:this.cuponOmni.codigo.toUpperCase(),
           activoCompraMin: 1,
           codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
@@ -2576,7 +2580,7 @@ export class CuponOmnicanalComponent implements OnInit {
       else if (this.selectionTypeCupon == '2' && tipo == 1) {
         console.log(this.productosCartaConsolidado);
         this.cuponOmni2 = {
-          nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),          
+          nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
           activoCompraMin: 1,
           codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
           monto: this.cuponOmni.percentdsct,
@@ -2605,7 +2609,7 @@ export class CuponOmnicanalComponent implements OnInit {
   
       else if (this.selectionTypeCupon == '2' && tipo == 2) { 
         this.cuponOmni2 = {
-          nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+          nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
           nombreCupon:this.cuponOmni.codigo.toUpperCase(),
           activoCompraMin: 1,
           codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
@@ -2634,7 +2638,7 @@ export class CuponOmnicanalComponent implements OnInit {
   
       else if (this.selectionTypeCupon == '3' && tipo == 1) {
         this.cuponOmni2 = {
-          nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+          nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
           activoCompraMin: 1,
           codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
           monto: this.cuponOmni.percentdsct,
@@ -2663,7 +2667,7 @@ export class CuponOmnicanalComponent implements OnInit {
   
       else if (this.selectionTypeCupon == '3' && tipo == 2) {
         this.cuponOmni2 = {
-          nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+          nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
           nombreCupon:this.cuponOmni.codigo.toUpperCase(),
           activoCompraMin: 1,
           codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
@@ -2692,7 +2696,7 @@ export class CuponOmnicanalComponent implements OnInit {
   
       else if (this.selectionTypeCupon == '4' && tipo == 1) {
         this.cuponOmni2 = {
-          nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+          nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
           activoCompraMin: 1,
           codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
           monto: this.cuponOmni.percentdsct,
@@ -2721,7 +2725,7 @@ export class CuponOmnicanalComponent implements OnInit {
   
       else if (this.selectionTypeCupon == '4' && tipo == 2) {
         this.cuponOmni2 = {
-          nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+          nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
           nombreCupon:this.cuponOmni.codigo.toUpperCase(),
           activoCompraMin: 1,
           codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
@@ -2750,7 +2754,7 @@ export class CuponOmnicanalComponent implements OnInit {
   
       else if (this.selectionTypeCupon == '5' && tipo == 1) {
         this.cuponOmni2 = {
-          nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+          nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
           activoCompraMin: 1,
           codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
           monto: this.cuponOmni.percentdsct,
@@ -2779,7 +2783,7 @@ export class CuponOmnicanalComponent implements OnInit {
   
       else if (this.selectionTypeCupon == '5' && tipo == 2) {
         this.cuponOmni2 = {
-          nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+          nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
           nombreCupon:this.cuponOmni.codigo.toUpperCase(),
           activoCompraMin: 1,
           codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
@@ -2808,7 +2812,7 @@ export class CuponOmnicanalComponent implements OnInit {
   
       else if (this.selectionTypeCupon == '6' && tipo == 1) {
         this.cuponOmni2 = {
-          nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+          nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
           activoCompraMin: 1,
           codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
           monto: this.cuponOmni.percentdsct,
@@ -2837,7 +2841,7 @@ export class CuponOmnicanalComponent implements OnInit {
   
       else if (this.selectionTypeCupon == '6' && tipo == 2) {
         this.cuponOmni2 = {
-          nombreCampanha: this.cuponOmni.nombreCampanha.toUpperCase(),
+          nombreCampanha: this.replaceDiacritics(this.cuponOmni.nombreCampanha.toUpperCase()),
           nombreCupon:this.cuponOmni.codigo.toUpperCase(),
           activoCompraMin: 1,
           codMarca:  this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
@@ -2865,7 +2869,7 @@ export class CuponOmnicanalComponent implements OnInit {
       }
       this.cuponOmni3 = {
         "codMarca": this.empresaService.getEmpresaSeleccionada().idEmpresa.toString(),
-        "nombreCampanha":this.cuponOmni.nombreCampanha
+        "nombreCampanha": this.replaceDiacritics(this.cuponOmni.nombreCampanha),
       }
           
       
