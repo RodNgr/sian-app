@@ -36,8 +36,11 @@ export const environment = {
   urlCarta: 'http://VSRVDEVAPP07.ngr.com.pe:9833/api/omnicanal',
   gtype: 'client_credentials',
   clientid: '7tj4d2jf2kenqkra76ga751omni',
-  clientsecret: 'mgps0alo77vpdviokkumq2njk3vggki7rnam9ho02sluvliigen'
-
+  clientsecret: 'mgps0alo77vpdviokkumq2njk3vggki7rnam9ho02sluvliigen',
+  urlUniqueClient: 'https://tstdrp.api-ngr.com',
+  clientidunico: '7tj4d2jf2kenqkra76ga751clienteunico',
+  clientsecretunico: 'mgps0alo77vpdviokkumq2njk3vggki7rnam9ho02sluvliiclienteunico',
+  urlAmauta: 'https://api.dev.amauta.api-ngr.com',
 
   //PRODUCCION
   //urlSecurity: 'http://VSRVPRDAPP07.ngr.com.pe:9999',
@@ -59,11 +62,7 @@ export const environment = {
   //gtype: 'client_credentials',
   //clientid: '7tj4d2jf2kenqkra76ga751omni',
   //clientsecret: 'mgps0alo77vpdviokkumq2njk3vggki7rnam9ho02sluvliigen'
-
 };
-
-
-
 
 /*
  * For easier debugging in development mode, you can import the following file

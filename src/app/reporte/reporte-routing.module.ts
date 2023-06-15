@@ -20,6 +20,7 @@ import { ReporteGestionPagadoEfectivoComponent } from './pages/reporte-gestion-p
 import { ListaTransaccionComponent } from './pages/lista-transaccion/lista-transaccion.component';
 import { ReporteGestionVentaLocatarioComponent } from './pages/reporte-gestion-venta-locatario/reporte-gestion-venta-locatario.component';
 import { ReporteRedimidoComponent } from './pages/reporte-redimido/reporte-redimido.component';
+import { GestionClienteComponent } from './pages/gestion-cliente/gestion-cliente.component';
 
 const routes: Routes = [
   { path: '',  children: 
@@ -31,7 +32,9 @@ const routes: Routes = [
       { path: 'reporte-gestion-vta-locatario', component: ReporteGestionVentaLocatarioComponent, canActivate: [AuthGuard, RoleGuard], data: {roles: ['ROL_SIAN_REP_GES_VTA_LOCATARIO']} },
       { path: 'reporte-gestion-prosegur', component: ReporteGestionProsegurComponent, canActivate: [AuthGuard, RoleGuard], data: {roles: ['ROL_SIAN_REP_GES_PROSEGUR']} },
       { path: 'reporte-gestion-ventas', component: ReporteGestionVentasComponent, canActivate: [AuthGuard, RoleGuard], data: {roles: ['ROL_SIAN_REP_GES_VENTAS']} },
-      { path: 'reporte-gestion-pago', component: ReporteGestionVentasFormaPagoComponent, canActivate: [AuthGuard, RoleGuard], data: {roles: ['ROL_SIAN_REP_GES_VTA_FORMA_PAGO']} },
+      { path: 'reporte-gestion-pago', component: ReporteGestionVentasFormaPagoComponent, data: {roles: ['ROL_SIAN_REP_GES_VTA_FORMA_PAGO']} },
+      // { path: 'reporte-gestion-pago', component: ReporteGestionVentasFormaPagoComponent, canActivate: [AuthGuard, RoleGuard], data: {roles: ['ROL_SIAN_REP_GES_VTA_FORMA_PAGO']} },
+      { path: 'reporte-gestion-cliente', component: GestionClienteComponent, data: {roles: ['ROL_SIAN_REP_GES_VTA_FORMA_PAGO']} },
       { path: 'reporte-gestion-agregador', component: ReporteGestionVentasAgregadorComponent, canActivate: [AuthGuard, RoleGuard], data: {roles: ['ROL_SIAN_REP_GES_AGREGADOR']} },
       { path: 'reporte-gestion-rendido-tarjeta', component: ReporteGestionRendidoTarjetasComponent, canActivate: [AuthGuard, RoleGuard], data: {roles: ['ROL_SIAN_REP_GES_RENDIDO_TARJETA']} },
       { path: 'reporte-gestion-pago-efectivo', component: ReporteGestionPagadoEfectivoComponent, canActivate: [AuthGuard, RoleGuard], data: {roles: ['ROL_SIAN_REP_GES_PAG_COB_EFECTIVO']} },
